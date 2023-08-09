@@ -129,6 +129,7 @@ get.x.smoothed <- function(x, W, x.fs = 1, NA.repl.source.k = 4,
       return(x.smoothed.i)
     })
     x.smoothed <- unlist(x.smoothed.list)
+    x.smoothed = unname(x.smoothed)
 
   } else {
     x.smoothed <- windowSmooth(x = x, W = W, x.fs = x.fs)
