@@ -18,8 +18,7 @@ segmentPattern(
   run.parallel = FALSE,
   run.parallel.cores = 1L,
   x.cut = TRUE,
-  x.cut.vl = 6000,
-  compute.template.idx = FALSE
+  x.cut.vl = 6000
 )
 }
 \arguments{
@@ -89,11 +88,6 @@ each part of \code{x} separately. Recommended for a time-series \code{x} of vect
 \item{x.cut.vl}{An integer scalar.
 Defines a vector length of parts that \code{x} vector is cut into during the execution time optimization procedure.
 Default is \code{6000} (recommended).}
-
-\item{compute.template.idx}{A logical scalar. Whether or not to compute and return information about
-which of the provided pattern templates yielded a similarity matrix value
-that corresponds to an identified pattern occurrence.
-Setting to \code{TRUE} may increase computation time. Default is \code{FALSE}.}
 }
 \value{
 A \code{data.frame} with segmentation results. Each row
@@ -105,9 +99,7 @@ describes one identified pattern occurrence:
   note: if \code{"maxima"} fine-tune and/or \code{x} smoothing is employed,
   the similarity value between the final segmented pattern and a template
    may differ from the value in this table,
-  \item \code{template_i} - if \code{compute.template.idx} equals \code{TRUE}:
-  index of a template best matched to \code{x};
- if \code{compute.template.idx} equals \code{FALSE}: \code{NA}.
+  \item \code{template_i} - index of a template best matched to \code{x}.
 }
 }
 \description{
@@ -139,8 +131,7 @@ out <- segmentPattern(
   x.fs = 100,
   template = true.pattern,
   pattern.dur.seq = c(0.9, 0.95, 1.03, 1.1),
-  similarity.measure = "cor",
-  compute.template.idx = TRUE)
+  similarity.measure = "cor")
 out
 ## Segment pattern from x. Now assume a grid of potential pattern duratios
 ## contains true pattern duration
@@ -149,8 +140,7 @@ out <- segmentPattern(
   x.fs = 100,
   template = true.pattern,
   pattern.dur.seq = c(0.9, 0.95, 1, 1.03, 1.1),
-  similarity.measure = "cor",
-  compute.template.idx = TRUE)
+  similarity.measure = "cor")
 out
 
 ## Example 2: Simulate a time-series `x`. Assume that
@@ -179,8 +169,7 @@ out <- segmentPattern(
   x.fs = 100,
   template = list(true.pattern.1, true.pattern.2),
   pattern.dur.seq = 60:130 * 0.01,
-  similarity.measure = "cor",
-  compute.template.idx = TRUE)
+  similarity.measure = "cor")
 out
 
 ## Example 3: Simulate a time-series `x`. Assume that
@@ -196,8 +185,7 @@ out <- segmentPattern(
   x.fs = 100,
   template = list(true.pattern.1, true.pattern.2),
   pattern.dur.seq =  60:130 * 0.01,
-  similarity.measure = "cor",
-  compute.template.idx = TRUE)
+  similarity.measure = "cor")
 out
 ## Segment pattern from x. Use `x.adept.ma.W` to define a length of a smoothing
 ## window to smooth `x` for similarity matrix computation.
@@ -207,8 +195,7 @@ out <- segmentPattern(
   template = list(true.pattern.1, true.pattern.2),
   pattern.dur.seq =  60:130 * 0.01,
   similarity.measure = "cor",
-  x.adept.ma.W = 0.1,
-  compute.template.idx = TRUE)
+  x.adept.ma.W = 0.1)
 out
 ## Segment pattern from x. Use `x.adept.ma.W` to define a length of a smoothing
 ## window to smooth `x` for similarity matrix computation. Employ a fine-tuning
@@ -221,8 +208,7 @@ out <- segmentPattern(
   similarity.measure = "cor",
   x.adept.ma.W = 0.1,
   finetune = "maxima",
-  finetune.maxima.nbh.W = 0.3,
-  compute.template.idx = TRUE)
+  finetune.maxima.nbh.W = 0.3)
 out
 ## Segment pattern from x. Employ a fine-tuning procedure for stride
 ## identification. Smooth `x` for both similarity matrix computation
@@ -236,8 +222,7 @@ out <- segmentPattern(
   similarity.measure = "cor",
   x.adept.ma.W = 0.1,
   finetune = "maxima",
-  finetune.maxima.nbh.W = 0.3,
-  compute.template.idx = TRUE)
+  finetune.maxima.nbh.W = 0.3)
 out
 
 }

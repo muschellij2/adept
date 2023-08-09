@@ -18,7 +18,6 @@ segmentWalking(
   mean_abs_diff_med_p_MAX = 0.5,
   mean_abs_diff_med_t_MAX = 0.2,
   mean_abs_diff_dur_MAX = 0.2,
-  compute.template.idx = FALSE,
   run.parallel = FALSE,
   run.parallel.cores = 1
 )
@@ -77,13 +76,6 @@ of 2 absolute differences between 3 subsequent values. Default used is 0.2.}
 duration time for 3 subsequent valid strides. Here, MAD* stands for mean
 of 2 absolute differences between 3 subsequent values. Default used is 0.2.}
 
-\item{compute.template.idx}{A logical scalar. Whether or not to compute
-and return information about
-which of the provided pattern templates yielded a similarity matrix value
-that corresponds to an identified pattern occurrence.
-Setting to \code{TRUE} may increase computation time.
-Default is \code{FALSE}.}
-
 \item{run.parallel}{A logical scalar. Whether or not to use parallel
 execution in the algorithm
 with \code{parallel} package. Default is \code{FALSE}.
@@ -101,10 +93,8 @@ describes one identified pattern occurrence:
   \item \code{T_i} - pattern duration, expressed in \code{xyz} vector length,
   \item \code{sim_i} -  similarity between a pattern and
   best-fit template; see \code{segmentPattern} for details,
-  \item \code{template_i} - if \code{compute.template.idx} equals \code{TRUE}:
-  index of a template best matched to \code{x};
- if \code{compute.template.idx} equals \code{FALSE}: \code{NA},
- \item \code{is_walking_i} -- \code{1} if a pattern is identified as walking
+  \item \code{template_i} - index of a template best matched to \code{x},
+  \item \code{is_walking_i} -- \code{1} if a pattern is identified as walking
  stride; \code{0} otherwise.
 }
 }

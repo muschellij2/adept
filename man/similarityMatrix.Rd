@@ -60,7 +60,7 @@ template.vl <- seq(300, 700, by = 50)
 template.scaled <- scaleTemplate(template, template.vl)
 
 ## Compute ADEPT similarity matrix
-out <- similarityMatrix(x, template.scaled, "cov")
+out <- similarityMatrix(x, template.scaled, "cov")$similarity
 
 ## Visualize
 par(mfrow = c(1,1))
