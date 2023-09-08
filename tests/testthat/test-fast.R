@@ -17,6 +17,8 @@ run_both = function(func = segmentPattern, args) {
 test_both = function(func = segmentPattern, args) {
   res = run_both(func = func, args = args)
   testthat::expect_equal(res$out, res$out_fast)
+  print(res$time_out)
+  print(res$time_out_fast)
 }
 
 testthat::test_that("fast segmentPattern gives same results", {
