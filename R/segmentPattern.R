@@ -325,7 +325,7 @@ segmentPattern <- function(x,
   # define number of cores to use in parallel
   mc.cores.val <- ifelse (run.parallel & (!(is.null(run.parallel.cores))), run.parallel.cores, 1L)
 
-  out.list <- parallel::mclapply(x.cut.seq, function(i){
+  out.list <- pbmcapply::pbmclapply(x.cut.seq, function(i){
     ## Define current x part indices
     idx.i <- i : min((i + x.cut.vl + x.cut.margin), length(x))
     ## If we cannot fit the longest pattern, return NULL
