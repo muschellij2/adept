@@ -59,6 +59,9 @@ make_shift_ones = function(template_length, nc) {
   make_shift_matrix(temp, nc, check_values = FALSE)
 }
 
+as_sparse_matrix = function(x, ...) {
+  Matrix::Matrix(x, sparse = TRUE, ...)
+}
 
 run_fast_segmentation = function(
     x,
@@ -110,6 +113,7 @@ run_fast_segmentation = function(
     one_mat = c(rep(TRUE, template_length),
                 rep(FALSE, nc - template_length))
     one_mat = array(one_mat[index_mat], dim = dim(index_mat))
+    one_mat = as_sparse_matrix(one_mat)
     # one_mat = make_shift_ones(template_length, nc)
     n_mat = (not_na_x) %*% one_mat
     n_mat[n_mat <= 1L] = NA_integer_
@@ -145,6 +149,7 @@ run_fast_segmentation = function(
       # shift_mat = make_shift_matrix(temp, nc)
       temp_pad = c(temp, rep(0, nc - length(temp)))
       shift_mat = array(temp_pad[index_mat], dim = dim(index_mat))
+      shift_mat = as_sparse_matrix(shift_mat)
 
       # shift_mat = array(temp, dim = dim(index_mat))
       # shift_mat[is.na(shift_mat)] = 0
@@ -158,6 +163,7 @@ run_fast_segmentation = function(
     # running pmax here.  We would need to do a workup on `res`
     # to get template.idx
     res = do.call(pmax, res)
+    res = as.matrix(res)
     res
   }, mc.cores = getOption("mc.cores", mc.cores.val))
 
