@@ -1,6 +1,8 @@
 # adept 1.4.0
 
 * Re-submit to cran after `rbenchmark` issue.
+* Removing `dvmisc` due to issue of archiving.
+* Replacing `dvmisc` moving-window routines with native equivalents.
 * New `roxygen2`.
 
 # adept 1.0.1

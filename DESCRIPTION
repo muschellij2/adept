@@ -3,14 +3,14 @@ Type: Package
 Title: Adaptive Empirical Pattern Transformation 
 Version: 1.4.0
 Authors@R: c(
-  person("Marta", "Karas", email = "marta.karass@gmail.com", role = c("aut", "cre"), 
-      comment = c(ORCID = "0000-0001-5889-3970")),
-  person("Jacek", "Urbanek", role = c("aut"), 
-      comment = c(ORCID = "0000-0002-1890-8899")),
-  person("Ciprian", "Crainiceanu", role = c("aut")),
-  person("John", "Muschelli", role = c("ctb"), 
-      comment = c(ORCID = "0000-0001-6469-1750")),
-  person("Adi", "Gherman", role = c("ctb"))
+    person("Marta", "Karas", , "muschellij2@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-5889-3970")),
+    person("Jacek", "Urbanek", role = "aut",
+           comment = c(ORCID = "0000-0002-1890-8899")),
+    person("Ciprian", "Crainiceanu", role = "aut"),
+    person("John", "Muschelli", role = "ctb",
+           comment = c(ORCID = "0000-0001-6469-1750")),
+    person("Adi", "Gherman", role = "ctb")
   )
 Description: Designed for optimal use in performing fast, 
     accurate walking strides segmentation from high-density 
@@ -39,7 +39,6 @@ VignetteBuilder: knitr
 Imports: 
     dplyr,
     magrittr,
-    dvmisc,
     parallel,
     pracma,
     assertthat
