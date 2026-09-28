@@ -3,7 +3,7 @@ Type: Package
 Title: Adaptive Empirical Pattern Transformation 
 Version: 1.4.0
 Authors@R: c(
-    person("Marta", "Karas", , "muschellij2@gmail.com", role = c("aut", "cre"),
+    person("Marta", "Karas", , "marta.karass@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-5889-3970")),
     person("Jacek", "Urbanek", role = "aut",
            comment = c(ORCID = "0000-0002-1890-8899")),
@@ -18,7 +18,6 @@ Description: Designed for optimal use in performing fast,
     during continuous walking activity.
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/martakarass/adept
 BugReports: https://github.com/martakarass/adept/issues
