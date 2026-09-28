@@ -1,3 +1,8 @@
+# adept 1.4.0
+
+* Re-submit to cran after `rbenchmark` issue.
+* New `roxygen2`.
+
 # adept 1.0.1
 
 * Added a `NEWS.md` file to track changes to the package.
