@@ -35,6 +35,7 @@ Suggests:
     cluster,
     adeptdata,
     covr
+NeedsCompilation: yes
 VignetteBuilder: knitr
 Imports: 
     dplyr,
