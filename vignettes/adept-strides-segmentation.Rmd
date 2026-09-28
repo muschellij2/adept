@@ -54,7 +54,7 @@ Screenshot taken from a personal profile of *mapmyrun* tracking application, acc
 
 ### Sensor and accelerometry data
 
-Data were collected with two [ActiGraph GT9X Link](https://ametris.com/actigraph-link/) physical activity monitors at the sampling frequency of 100 Hz. ActiGraph GT9X Link has 3-axis accelerometer collecting accelerometry data along three orthogonal axes. At a sampling frequency of 100 Hz, we collected 100 observations per second per axis (total of 300 observations per second).  
+Data were collected with two [ActiGraph GT9X Link](https://blog.ametris.com/blog/gt9x-link) physical activity monitors at the sampling frequency of 100 Hz. ActiGraph GT9X Link has 3-axis accelerometer collecting accelerometry data along three orthogonal axes. At a sampling frequency of 100 Hz, we collected 100 observations per second per axis (total of 300 observations per second).  
 
 ### Sensor location
 
